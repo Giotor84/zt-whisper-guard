@@ -1,0 +1,29 @@
+[build-system]
+requires = ["setuptools>=77"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "zt-whisper-guard"
+version = "0.1.0"
+description = "Stop Whisper from inventing text on noisy real-world audio: loop, gibberish and boilerplate filters, segment gate, live utterance buffer"
+readme = "README.md"
+license = "MIT"
+license-files = ["LICENSE"]
+authors = [{ name = "Gioacchino Tortorici" }]
+requires-python = ">=3.10"
+dependencies = []
+keywords = ["whisper", "faster-whisper", "speech-to-text", "hallucination", "asr"]
+
+[project.optional-dependencies]
+live = ["numpy>=1.24"]
+dev = ["pytest>=8", "numpy>=1.24"]
+
+[project.urls]
+Homepage = "https://github.com/Giotor84/zt-whisper-guard"
+
+[tool.setuptools.packages.find]
+where = ["src"]
+
+[tool.pytest.ini_options]
+pythonpath = ["src"]
+addopts = "-q"
